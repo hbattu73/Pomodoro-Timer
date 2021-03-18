@@ -81,7 +81,7 @@ async function timerFunction() {
 }
 
 async function start() {
-    startButton.innerHTML = 'Stop';
+    startButton.innerHTML = 'Abort';
     timer = setInterval(timerFunction, SECOND);
 }
 
