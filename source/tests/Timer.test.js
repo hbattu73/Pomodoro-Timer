@@ -33,7 +33,7 @@ test('start timer function', () => {
 
     jest.advanceTimersByTime(5000);
 
-    expect(startButton.innerHTML).toBe('Stop');
+    expect(startButton.innerHTML).toBe('Abort');
     expect(display.innerHTML).toBe('24:55');
 });
 
@@ -363,7 +363,7 @@ describe(('keyboard input'), () => {
 
         jest.advanceTimersByTime(5000);
 
-        expect(startButton.innerHTML).toBe('Stop');
+        expect(startButton.innerHTML).toBe('Abort');
         expect(display.innerHTML).toBe('24:55');
     });
 

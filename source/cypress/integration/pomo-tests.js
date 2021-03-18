@@ -222,7 +222,7 @@ describe('reset popup and timer', () => {
         cy.get('reset-popup').shadow()
             .find('#close-icon').click();
         cy.get('#timer_display_duration').should('not.have.text', '25:00');
-        cy.get('#start-btn').should('have.text', 'Stop');
+        cy.get('#start-btn').should('have.text', 'Abort');
         cy.get('task-item').should('have.length', 2);
     });
 
@@ -233,7 +233,7 @@ describe('reset popup and timer', () => {
         cy.get('reset-popup').shadow()
             .find('#close-icon').click();
         cy.get('#timer_display_duration').should('not.have.text', '25:00');
-        cy.get('#start-btn').should('have.text', 'Stop');
+        cy.get('#start-btn').should('have.text', 'Abort');
         cy.get('task-item').should('have.length', 2);
     });
 });
@@ -305,7 +305,7 @@ describe('setting popup and timer', () => {
             .find('#close-icon')
             .trigger('click');
         cy.get('#timer_display_duration').should('have.text', '24:57');
-        cy.get('#start-btn').should('have.text', 'Stop');
+        cy.get('#start-btn').should('have.text', 'Abort');
     });
 
     it(('switch to dark mode while timer is runing'), () => {
@@ -404,14 +404,14 @@ describe(('toggle focus mode while timer is runing'), () => {
         });
         // timer runs as intended
         cy.get('#timer_display_duration').should('have.text', '24:58');
-        cy.get('#start-btn').should('have.text', 'Stop');
+        cy.get('#start-btn').should('have.text', 'Abort');
         // toggle back to normal mode
         cy.get('#focus-button').click();
         cy.url().should(() => {
             expect(localStorage.getItem('state')).contains('default');
         });
         cy.get('#timer_display_duration').should('have.text', '24:56');
-        cy.get('#start-btn').should('have.text', 'Stop');
+        cy.get('#start-btn').should('have.text', 'Abort');
     });
 });
 
@@ -522,7 +522,7 @@ describe(('keyboard shortcut and focus mode'), () => {
     it(('start and stop the timer'), () => {
         cy.get('body').type('s');
         cy.get('#timer_display_duration').should('not.have.text', '25:00');
-        cy.get('#start-btn').should('have.text', 'Stop');
+        cy.get('#start-btn').should('have.text', 'Abort');
         cy.get('body').type('s');
         cy.get('#timer_display_duration').should('have.text', '25:00');
         cy.get('#start-btn').should('have.text', 'Start');
