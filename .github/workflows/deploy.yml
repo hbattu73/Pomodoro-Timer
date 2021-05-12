@@ -40,7 +40,7 @@ jobs:
       - run: cp -av coverage build
 
       - name: Build docs
-        uses: andstor/jsdoc-action@v1
+        uses: andstor/jsdoc-action@v1.2.0
         with:
           source_dir: source/src
           output_dir: source/build/docs
